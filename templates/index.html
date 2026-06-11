@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fake News Detector</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="panel">
+      <p class="eyebrow">Fake News Detection</p>
+      <h4>Verify claims against live fact references, timelines, and knowledge graphs</h4>
+
+
+      <form action="/predict" method="post" class="form">
+        <label for="article_url">Article URL (optional)</label>
+        <input id="article_url" name="article_url" type="url" placeholder="https://example.com/news-story" value="__ARTICLE_URL__">
+        <label for="news">News text</label>
+        <textarea id="news" name="news" rows="10" placeholder="Paste one or more claims here. Long text will be split into separate claims.">__NEWS_TEXT__</textarea>
+        <button type="submit">Verify claim</button>
+      </form>
+
+      <p class="error">__ERROR_TEXT__</p>
+      __RESULT_BLOCK__
+    </section>
+  </main>
+</body>
+</html>
